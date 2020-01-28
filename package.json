@@ -1,0 +1,16 @@
+{
+  "name": "3DTileCreator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "SR - DR",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^4.1.0",
+    "electron-reload": "^1.4.0",
+    "three": "latest"
+  }
+}
