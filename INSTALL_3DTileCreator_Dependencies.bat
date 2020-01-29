@@ -1,3 +1,3 @@
-npm start
+npm install
 
 PAUSE
