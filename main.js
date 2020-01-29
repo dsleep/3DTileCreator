@@ -9,8 +9,8 @@ const init = () => {
 	camera.position.z = 10;
 
 	// dat.GUI()
-	gui = new dat.GUI();
-	gui.add(camera.position, 'z', 0, 800);
+	//gui = new dat.GUI();
+	//gui.add(camera.position, 'z', 0, 800);
 	// camera Orbit
 	controls = new THREE.OrbitControls(camera, document.getElementById('webgl'));
 	// axis helper
@@ -26,9 +26,23 @@ const init = () => {
 		'ABQSimpler.obj',
 		// called when resource is loaded
 		function ( object ) {
+			//.makeRotationX
+			object.applyMatrix( new THREE.Matrix4().makeRotationX(-1.57) );
+			
+			var FindBox = new THREE.Box3();
+			FindBox.expandByObject(object);
 
-			scene.add( object );
+			object.applyMatrix(new THREE.Matrix4().makeTranslation(-FindBox.getCenter().x, -FindBox.getCenter().y, -FindBox.getCenter().z));
+			scene.add(object);
 
+			var box = new THREE.BoxHelper(object, 0xffff00);
+			scene.add( box );	
+			
+			var size = 1000;
+			var divisions = 10;
+
+			var gridHelper = new THREE.GridHelper(size, divisions);
+			scene.add(gridHelper);
 		},
 		// called when loading is in progresses
 		function ( xhr ) {
@@ -112,7 +126,7 @@ const init = () => {
 		renderer.render(scene, camera);
 		controls.update();
 		animate();
-		gui.open();
+		//gui.open();
 	};
 	render();
 };

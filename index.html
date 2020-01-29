@@ -3,13 +3,59 @@
   <head>
     <title>3D Tile Creator</title>
     <style>
-      body {
-        margin: 0;
-        overflow: hidden;
-      }
+		html, body  {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+		
+		/* Style the tab content */
+		.tabcontent {
+			display: none;
+			padding: 2px 2px;
+			border: 1px solid #ccc;
+			border-top: none;
+			position: absolute;
+			left: 20px;
+			top: 68px;
+			z-index: 2;
+			background-color : dimgray;
+			border-color: black;
+		}
+
+	  
+		  /* Style the tab */
+		.Selection {
+			overflow: hidden;
+			border: 1px solid #ccc;
+			background-color: white;
+			position: absolute;
+			left: 20px;
+			top: 20px;
+			z-index: 20;
+		}
+
     </style>
   </head>
   <body>
+  
+  <div class="Selection" >
+		3D TILE LOD(s)<br>
+	   <select  width="50px">
+	  <option value="Layer1">Layer 1</option>
+	  <option value="Layer2">Layer 2</option>
+	  <option value="Layer3>Layer 3</option>
+	  <option value="Layer4">Layer 4</option>
+	</select> 
+	
+	<button>Add Layer</button>
+	
+	<button>Remove Layer</button>
+	
+	</div>
+
     <script src="./node_modules/three/build/three.js"></script>
 <!--    <script src="./node_modules/three/examples/js/controls/FlyControls.js"></script> -->
 	<script src="./node_modules/three/examples/js/controls/OrbitControls.js"></script>
