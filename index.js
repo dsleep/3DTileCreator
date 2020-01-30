@@ -21,6 +21,11 @@ app.on('ready', () => {
 });
 
 const mainMenuTemplate = [
+    {
+        label: 'Open OBJ',
+        click() {
+        }
+    },
   {
     label: 'Devtool',
     accelerator: 'Ctrl+D',
@@ -34,5 +39,10 @@ const mainMenuTemplate = [
     click() {
       mainWindow.reload();
     }
-  }
+    },
+    {
+        label: 'Quit',
+        accelerator: 'Command+Q',
+        click() { app.quit(); }
+    },
 ];
