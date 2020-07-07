@@ -6,7 +6,7 @@
   "author": "SR - DR",
   "license": "MIT",
   "dependencies": {
-    "electron": "^4.1.0",
+    "electron": "^9.1.0",
     "electron-reload": "^1.4.0",
     "three": "latest",
     "extend": "^3.0.1",
